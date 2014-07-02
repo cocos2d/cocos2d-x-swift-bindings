@@ -88,8 +88,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D048E2F71964A67B00530995 /* libiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D048E3131964A6AF00530995 /* libMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D048E2F71964A67B00530995 /* libswift-bindings-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libswift-bindings-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D048E3131964A6AF00530995 /* libswift-bindings-Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libswift-bindings-Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D048E3171964A6E500530995 /* Acceleration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Acceleration.h; path = ../../../Acceleration.h; sourceTree = "<group>"; };
 		D048E3181964A6E500530995 /* Acceleration.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Acceleration.mm; path = ../../../Acceleration.mm; sourceTree = "<group>"; };
 		D048E3191964A6E500530995 /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Action.h; path = ../../../Action.h; sourceTree = "<group>"; };
@@ -165,8 +165,8 @@
 		D048E2F81964A67B00530995 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D048E2F71964A67B00530995 /* libiOS.a */,
-				D048E3131964A6AF00530995 /* libMac.a */,
+				D048E2F71964A67B00530995 /* libswift-bindings-iOS.a */,
+				D048E3131964A6AF00530995 /* libswift-bindings-Mac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,9 +258,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D048E2F61964A67B00530995 /* iOS */ = {
+		D048E2F61964A67B00530995 /* swift-bindings-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D048E30D1964A67B00530995 /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildConfigurationList = D048E30D1964A67B00530995 /* Build configuration list for PBXNativeTarget "swift-bindings-iOS" */;
 			buildPhases = (
 				D048E2F31964A67B00530995 /* Sources */,
 				D048E2F41964A67B00530995 /* Frameworks */,
@@ -270,14 +270,14 @@
 			);
 			dependencies = (
 			);
-			name = iOS;
+			name = "swift-bindings-iOS";
 			productName = iOS;
-			productReference = D048E2F71964A67B00530995 /* libiOS.a */;
+			productReference = D048E2F71964A67B00530995 /* libswift-bindings-iOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		D048E3121964A6AF00530995 /* Mac */ = {
+		D048E3121964A6AF00530995 /* swift-bindings-Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D048E3141964A6AF00530995 /* Build configuration list for PBXNativeTarget "Mac" */;
+			buildConfigurationList = D048E3141964A6AF00530995 /* Build configuration list for PBXNativeTarget "swift-bindings-Mac" */;
 			buildPhases = (
 				D048E30F1964A6AF00530995 /* Sources */,
 				D048E3101964A6AF00530995 /* Frameworks */,
@@ -287,9 +287,9 @@
 			);
 			dependencies = (
 			);
-			name = Mac;
+			name = "swift-bindings-Mac";
 			productName = Mac;
-			productReference = D048E3131964A6AF00530995 /* libMac.a */;
+			productReference = D048E3131964A6AF00530995 /* libswift-bindings-Mac.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -320,8 +320,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D048E2F61964A67B00530995 /* iOS */,
-				D048E3121964A6AF00530995 /* Mac */,
+				D048E2F61964A67B00530995 /* swift-bindings-iOS */,
+				D048E3121964A6AF00530995 /* swift-bindings-Mac */,
 			);
 		};
 /* End PBXProject section */
@@ -570,21 +570,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D048E30D1964A67B00530995 /* Build configuration list for PBXNativeTarget "iOS" */ = {
+		D048E30D1964A67B00530995 /* Build configuration list for PBXNativeTarget "swift-bindings-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D048E3091964A67B00530995 /* Debug */,
 				D048E30A1964A67B00530995 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		D048E3141964A6AF00530995 /* Build configuration list for PBXNativeTarget "Mac" */ = {
+		D048E3141964A6AF00530995 /* Build configuration list for PBXNativeTarget "swift-bindings-Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D048E3151964A6AF00530995 /* Debug */,
 				D048E3161964A6AF00530995 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
