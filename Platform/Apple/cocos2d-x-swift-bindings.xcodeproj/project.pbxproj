@@ -10,8 +10,6 @@
 		D03AFCDA1964ED2F00A9BF4E /* cocos-Bridge-Contents.h in Headers */ = {isa = PBXBuildFile; fileRef = D03AFCD71964ED2F00A9BF4E /* cocos-Bridge-Contents.h */; };
 		D03AFCDB1964ED2F00A9BF4E /* cocos-iOS-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = D03AFCD81964ED2F00A9BF4E /* cocos-iOS-Bridging-Header.h */; };
 		D03AFCDC1964ED2F00A9BF4E /* cocos-Mac-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = D03AFCD91964ED2F00A9BF4E /* cocos-Mac-Bridging-Header.h */; };
-		D03AFCE21964EE6100A9BF4E /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03AFCE11964EE6100A9BF4E /* Debug.swift */; };
-		D03AFCE31964EE6100A9BF4E /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03AFCE11964EE6100A9BF4E /* Debug.swift */; };
 		D048E3431964A6E500530995 /* Acceleration.h in Headers */ = {isa = PBXBuildFile; fileRef = D048E3171964A6E500530995 /* Acceleration.h */; };
 		D048E3441964A6E500530995 /* Acceleration.mm in Sources */ = {isa = PBXBuildFile; fileRef = D048E3181964A6E500530995 /* Acceleration.mm */; };
 		D048E3451964A6E500530995 /* Acceleration.mm in Sources */ = {isa = PBXBuildFile; fileRef = D048E3181964A6E500530995 /* Acceleration.mm */; };
@@ -96,7 +94,6 @@
 		D03AFCD71964ED2F00A9BF4E /* cocos-Bridge-Contents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "cocos-Bridge-Contents.h"; path = "../../cocos-Bridge-Contents.h"; sourceTree = "<group>"; };
 		D03AFCD81964ED2F00A9BF4E /* cocos-iOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "cocos-iOS-Bridging-Header.h"; path = "../../cocos-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		D03AFCD91964ED2F00A9BF4E /* cocos-Mac-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "cocos-Mac-Bridging-Header.h"; path = "../../cocos-Mac-Bridging-Header.h"; sourceTree = "<group>"; };
-		D03AFCE11964EE6100A9BF4E /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Debug.swift; path = ../../Swift/Debug.swift; sourceTree = "<group>"; };
 		D048E2F71964A67B00530995 /* libswift-bindings-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libswift-bindings-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D048E3131964A6AF00530995 /* libswift-bindings-Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libswift-bindings-Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D048E3171964A6E500530995 /* Acceleration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Acceleration.h; path = ../../../Acceleration.h; sourceTree = "<group>"; };
@@ -173,21 +170,12 @@
 			name = "Bridging Headers";
 			sourceTree = "<group>";
 		};
-		D03AFCE01964EE4900A9BF4E /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				D03AFCE11964EE6100A9BF4E /* Debug.swift */,
-			);
-			name = Swift;
-			sourceTree = "<group>";
-		};
 		D048E2EC1964A64F00530995 = {
 			isa = PBXGroup;
 			children = (
 				D048E2F91964A67B00530995 /* Bindings */,
 				D03AFCD61964ED1700A9BF4E /* Bridging Headers */,
 				D048E2F81964A67B00530995 /* Products */,
-				D03AFCE01964EE4900A9BF4E /* Swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -371,7 +359,6 @@
 				D048E34D1964A6E500530995 /* ActionSequence.mm in Sources */,
 				D048E36B1964A6E500530995 /* Layer.mm in Sources */,
 				D048E34A1964A6E500530995 /* ActionInterval.mm in Sources */,
-				D03AFCE21964EE6100A9BF4E /* Debug.swift in Sources */,
 				D048E3681964A6E500530995 /* Label.mm in Sources */,
 				D048E3651964A6E500530995 /* EventListenerTouch.mm in Sources */,
 				D048E3771964A6E500530995 /* Sprite.mm in Sources */,
@@ -401,7 +388,6 @@
 				D048E34E1964A6E500530995 /* ActionSequence.mm in Sources */,
 				D048E36C1964A6E500530995 /* Layer.mm in Sources */,
 				D048E34B1964A6E500530995 /* ActionInterval.mm in Sources */,
-				D03AFCE31964EE6100A9BF4E /* Debug.swift in Sources */,
 				D048E3691964A6E500530995 /* Label.mm in Sources */,
 				D048E3661964A6E500530995 /* EventListenerTouch.mm in Sources */,
 				D048E3781964A6E500530995 /* Sprite.mm in Sources */,
