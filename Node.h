@@ -28,6 +28,8 @@
 
 #import "Ref.h"
 
+@class Action;
+
 typedef void(^tUpdateBlock)(float);
 
 @interface Node : Ref

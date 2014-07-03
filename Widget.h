@@ -26,5 +26,7 @@
 //  Widget.h
 //  Created by Justin Graham on 6/28/14.
 
-@interface Widget : NSObject
+#import "Ref.h"
+
+@interface Widget : Ref
 @end
