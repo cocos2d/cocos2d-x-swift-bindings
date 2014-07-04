@@ -83,8 +83,8 @@ namespace {
 - (void) initCommon
 {
     INNER(n,Node);
-    n->onEnterCallback = [self] () { [self onEnter]; };
-    n->onExitCallback  = [self] () { [self onExit]; };
+    n->setOnEnterCallback([self] () { [self onEnter]; });
+    n->setOnExitCallback([self] () { [self onExit]; });
 }
 
 - (void) dealloc

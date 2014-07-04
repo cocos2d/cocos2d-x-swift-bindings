@@ -23,37 +23,31 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//  Ref.h
-//  Created by Justin Graham on 6/17/14.
+//  AudioEngine.h
+//  Created by Justin Graham on 7/3/14.
 
-#import "Foundation/Foundation.h"
-#import "CoreGraphics/CoreGraphics.h"
+#import "Ref.h"
+#include "stdint.h"
 
-@interface Ref : NSObject
-{
-@protected
-    void* _inner;
-}
-- (id) retain;
-- (void) release;
-@property (assign,nonatomic) void* inner;
+@interface AudioEngine : Ref
++ (AudioEngine*) getInstance;
+- (void) preloadBackgroundMusic :(NSString*)path;
+- (void) playBackgroundMusic :(NSString*)path :(bool)loop;
+- (void) stopBackgroundMusic;
+- (void) pauseBackgroundMusic;
+- (void) resumeBackgroundMusic;
+- (void) rewindBackgroundMusic;
+- (bool) isBackgroundMusicPlaying;
+- (void) setBackgroundMusicVolume :(float)volume;
+- (float) getEffectsVolume;
+- (void) setEffectsVolume :(float)volume;
+- (UInt) playEffect :(NSString*)path :(bool)loop :(float)pan :(float)gain;
+- (void) pauseEffect :(UInt)id;
+- (void) pauseAllEffects;
+- (void) resumeEffect :(UInt)id;
+- (void) resumeAllEffects;
+- (void) stopEffect :(UInt)id;
+- (void) stopAllEffects;
+- (void) preloadEffect :(NSString*)path;
+- (void) unloadEffect :(NSString*)path;
 @end
-
-#define INNER(v,T) cocos2d::T* v = static_cast<cocos2d::T*>(self.inner)
-#define INNERNS(v,T) T* v = static_cast<T*>(self.inner)
-
-#define GET_OUTER(v,T) static_cast<T*>(v->_scriptObject)
-
-#define SET_OUTER(v,T) \
-    if (nullptr == v->_scriptObject) \
-    { \
-        T* t = [[T alloc] init]; \
-        t.inner = v; \
-        v->_scriptObject = t; \
-    } \
-    else \
-    { \
-        T* t = static_cast<T*>(v->_scriptObject); \
-        t.inner = v; \
-    }
-

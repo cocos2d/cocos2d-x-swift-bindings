@@ -40,16 +40,10 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
+        instance.inner = cocos2d::Director::getInstance();
+
     });
     return instance;
-}
-
-- (id) init
-{
-    self = [super init];
-    if (nil != self)
-        self.inner = cocos2d::Director::getInstance();
-    return self;
 }
 
 - (void) runWithScene:(Scene*)scene

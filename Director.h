@@ -31,18 +31,20 @@
 
 @class EventDispatcher;
 @class Console;
+@class AudioEngine;
 
 @interface Director : Ref
 {
-    EventDispatcher* _eventDispatcher;
-    Console* _console;
+//    EventDispatcher* _eventDispatcher;
+//    Console* _console;
+//    AudioEngine* _audioEngine;
 }
 + (Director*) getInstance;
-- (id) init;
 - (void) runWithScene :(Scene*)scene;
 - (void) pushScene :(Scene*)scene;
 - (void) popScene;
 - (CGSize) getWinSize;
 @property (nonatomic,retain) Console* console;
 @property (nonatomic,retain) EventDispatcher* eventDispatcher;
+@property (nonatomic,retain) AudioEngine* audioEngine;
 @end
