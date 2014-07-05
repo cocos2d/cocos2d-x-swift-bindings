@@ -27,6 +27,7 @@
 //  Created by Justin Graham on 6/17/14.
 
 #import "Node.h"
+#import "Action.h"
 #include "CCNode.h"
 #include "CCComponent.h"
 #include "CCAction.h"

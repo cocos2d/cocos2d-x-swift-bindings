@@ -23,23 +23,11 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//  EventListener.mm
+//  EventListener.h
 //  Created by Justin Graham on 6/22/14.
 
-#import "EventListener.h"
-#include "CCEventListener.h"
+#import "Ref.h"
 
-@implementation EventListener
-typedef void(^callback)(Event*);
-- (void) setEnabled:(bool)enabled
-{
-    INNER(l, EventListener);
-    l->setEnabled(enabled);
-}
-
-- (bool) enabled
-{
-    INNER(l, EventListener);
-    return l->isEnabled();
-}
+@interface EventListener : Ref
+@property (nonatomic) bool enabled;
 @end

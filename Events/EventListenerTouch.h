@@ -23,45 +23,27 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//  EventDispatcher.mm
+//  EventListenerTouch.h
 //  Created by Justin Graham on 6/21/14.
 
-#import "EventDispatcher.h"
-#import "Event.h"
-#include "CCDirector.h"
-#include "CCEventDispatcher.h"
-#include "CCEvent.h"
+#import "EventListener.h"
 
-@implementation EventDispatcher
-- (id) init
-{
-    self.inner = cocos2d::Director::getInstance()->getEventDispatcher();
-    return self;
-}
+@class Touch;
+@class Event;
 
-- (void) addEventListenerWithSceneGraphPriority :(EventListener*)listener  :(Node*)node
-{
-    INNER(d,EventDispatcher);
-    [listener retain];
-    d->addEventListenerWithSceneGraphPriority(static_cast<cocos2d::EventListener*>(listener.inner), static_cast<cocos2d::Node*>(node.inner));
-}
-
-- (void) removeEventListener :(EventListener*) listener
-{
-    INNER(d,EventDispatcher);
-    d->removeEventListener(static_cast<cocos2d::EventListener*>(listener.inner));
-    [listener release];
-}
-
-- (void) removeEventListenersForTarget :(Node*)target :(bool)recursive
-{
-    INNER(d,EventDispatcher);
-    d->removeEventListenersForTarget(static_cast<cocos2d::Node*>(target.inner), recursive);
-}
-
-- (void) dispatchEvent :(Event*) event
-{
-    INNER(d,EventDispatcher);
-    d->dispatchEvent(static_cast<cocos2d::Event*>(event.inner));
-}
+@interface EventListenerTouchOneByOne : EventListener
+typedef bool(^boolBlock)(Touch*, Event*);
+typedef void(^voidBlock)(Touch*, Event*);
+@property (nonatomic,copy) boolBlock onTouchBegan;
+@property (nonatomic,copy) voidBlock onTouchMoved;
+@property (nonatomic,copy) voidBlock onTouchEnded;
+@property (nonatomic,copy) voidBlock onTouchCancelled;
+@property (nonatomic,retain) NSArray* claimedTouches;
+@property (nonatomic) bool swallowTouches;
+@property (nonatomic) bool needSwallow;
+- (id) init;
++ (EventListenerTouchOneByOne*) create;
+- (bool) checkAvailable;
+- (EventListenerTouchOneByOne*) clone;
 @end
+

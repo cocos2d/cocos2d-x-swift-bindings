@@ -23,26 +23,20 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//  EventListenerTouch.h
-//  Created by Justin Graham on 6/21/14.
+//  EventListenerAcceleration.h
+//  Created by Justin Graham on 6/28/14.
 
 #import "EventListener.h"
 
-@class Touch;
+@class Acceleration;
+@class Event;
 
-@interface EventListenerTouchOneByOne : EventListener
-typedef bool(^boolBlock)(Touch*, Event*);
-typedef void(^voidBlock)(Touch*, Event*);
-@property (nonatomic,copy) boolBlock onTouchBegan;
-@property (nonatomic,copy) voidBlock onTouchMoved;
-@property (nonatomic,copy) voidBlock onTouchEnded;
-@property (nonatomic,copy) voidBlock onTouchCancelled;
-@property (nonatomic,retain) NSArray* claimedTouches;
-@property (nonatomic) bool swallowTouches;
-@property (nonatomic) bool needSwallow;
-- (id) init;
-+ (EventListenerTouchOneByOne*) create;
+typedef void(^AccelerationCallback)(Acceleration*, Event*);
+
+@interface EventListenerAcceleration : EventListener
+@property (nonatomic,readonly) NSString* LISTENER_ID;
+@property (nonatomic,copy) AccelerationCallback onAccelerate;
++ (EventListenerAcceleration*) create :(AccelerationCallback)callback;
+- (EventListenerAcceleration*) clone;
 - (bool) checkAvailable;
-- (EventListenerTouchOneByOne*) clone;
 @end
-

@@ -27,6 +27,8 @@
 //  Created by Justin Graham on 6/21/14.
 
 #import "EventListenerTouch.h"
+#import "Event.h"
+#import "Touch.h"
 #include "CCEventListenerTouch.h"
 #include "CCTouch.h"
 #include "CCEvent.h"
