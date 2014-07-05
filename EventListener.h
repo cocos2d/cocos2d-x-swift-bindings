@@ -28,8 +28,6 @@
 
 #import "Ref.h"
 
-@class Event;
-
 @interface EventListener : Ref
 @property (nonatomic) bool enabled;
 @end

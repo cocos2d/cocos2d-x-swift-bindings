@@ -29,6 +29,7 @@
 #import "EventListener.h"
 
 @class Touch;
+@class Event;
 
 @interface EventListenerTouchOneByOne : EventListener
 typedef bool(^boolBlock)(Touch*, Event*);

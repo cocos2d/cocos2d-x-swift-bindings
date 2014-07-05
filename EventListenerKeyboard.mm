@@ -27,6 +27,7 @@
 //  Created by Justin Graham on 6/30/14.
 
 #import "EventListenerKeyboard.h"
+#import "Event.h"
 #include "CCEventListenerKeyboard.h"
 
 @implementation EventListenerKeyboard

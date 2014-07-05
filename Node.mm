@@ -27,6 +27,7 @@
 //  Created by Justin Graham on 6/17/14.
 
 #import "Node.h"
+#import "Action.h"
 #include "CCNode.h"
 #include "CCComponent.h"
 #include "CCAction.h"
@@ -83,8 +84,8 @@ namespace {
 - (void) initCommon
 {
     INNER(n,Node);
-    n->onEnterCallback = [self] () { [self onEnter]; };
-    n->onExitCallback  = [self] () { [self onExit]; };
+    n->setOnEnterCallback([self] () { [self onEnter]; });
+    n->setOnExitCallback([self] () { [self onExit]; });
 }
 
 - (void) dealloc

@@ -28,6 +28,8 @@
 
 #import "EventListener.h"
 
+@class Event;
+
 @interface EventListenerKeyboard : EventListener
 typedef NS_ENUM(NSInteger, KeyCode)
 {

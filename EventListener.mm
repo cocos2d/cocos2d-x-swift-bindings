@@ -27,6 +27,7 @@
 //  Created by Justin Graham on 6/22/14.
 
 #import "EventListener.h"
+#import "Event.h"
 #include "CCEventListener.h"
 
 @implementation EventListener
