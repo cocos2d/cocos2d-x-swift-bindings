@@ -41,12 +41,12 @@
 - (void) setBackgroundMusicVolume :(float)volume;
 - (float) getEffectsVolume;
 - (void) setEffectsVolume :(float)volume;
-- (UInt) playEffect :(NSString*)path :(bool)loop :(float)pan :(float)gain;
-- (void) pauseEffect :(UInt)id;
+- (uint32_t) playEffect :(NSString*)path :(bool)loop :(float)pan :(float)gain;
+- (void) pauseEffect :(uint32_t)id;
 - (void) pauseAllEffects;
-- (void) resumeEffect :(UInt)id;
+- (void) resumeEffect :(uint32_t)id;
 - (void) resumeAllEffects;
-- (void) stopEffect :(UInt)id;
+- (void) stopEffect :(uint32_t)id;
 - (void) stopAllEffects;
 - (void) preloadEffect :(NSString*)path;
 - (void) unloadEffect :(NSString*)path;
