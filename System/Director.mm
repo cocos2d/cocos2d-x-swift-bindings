@@ -29,6 +29,7 @@
 #import "Director.h"
 #import "Scene.h"
 #import "Console.h"
+#import "EventDispatcher.h"
 #include "CCDirector.h"
 #include "CCScene.h"
 #include "CCConsole.h"
