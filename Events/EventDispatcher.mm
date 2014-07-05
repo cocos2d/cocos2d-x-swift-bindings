@@ -28,9 +28,12 @@
 
 #import "EventDispatcher.h"
 #import "Event.h"
+#import "EventListener.h"
+#import "Node.h"
 #include "CCDirector.h"
 #include "CCEventDispatcher.h"
 #include "CCEvent.h"
+#include "CCNode.h"
 
 @implementation EventDispatcher
 - (id) init

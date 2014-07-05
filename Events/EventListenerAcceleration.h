@@ -26,6 +26,8 @@
 //  EventListenerAcceleration.h
 //  Created by Justin Graham on 6/28/14.
 
+#import "EventListener.h"
+
 @class Acceleration;
 @class Event;
 
