@@ -41,4 +41,10 @@
     [self initCommon];
     return self;
 }
+
+- (void) dealloc
+{
+    [self removeAllChildren];
+    [super dealloc];
+}
 @end

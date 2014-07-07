@@ -70,6 +70,19 @@
     director->popScene();
 }
 
+- (void) replaceScene :(Scene*)scene
+{
+    INNER(director,Director);
+    auto old = director->getRunningScene();
+    if (old)
+    {
+        auto s = GET_OUTER(old,Scene);
+        [s release];
+    }
+    [scene retain];
+    director->replaceScene(static_cast<cocos2d::Scene*>(scene.inner));
+}
+
 - (CGSize) getWinSize
 {
     INNER(director,Director);

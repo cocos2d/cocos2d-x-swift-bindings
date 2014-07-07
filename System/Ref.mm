@@ -64,16 +64,15 @@
 {
     if (_inner)
     {
-        auto n = static_cast<cocos2d::Ref*>(_inner);
-        n->release();
+        [self retain];
         _inner = nil;
     }
     if (inner)
     {
-        auto n = static_cast<cocos2d::Ref*>(inner);
-        n->retain();
-        n->_scriptObject = self;
         _inner = inner;
+        [self retain];
+        auto n = static_cast<cocos2d::Ref*>(inner);
+        n->_scriptObject = self;
     }
 }
 @end

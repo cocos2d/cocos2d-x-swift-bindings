@@ -43,6 +43,7 @@
 - (void) runWithScene :(Scene*)scene;
 - (void) pushScene :(Scene*)scene;
 - (void) popScene;
+- (void) replaceScene :(Scene*)scene;
 - (CGSize) getWinSize;
 @property (nonatomic,retain) Console* console;
 @property (nonatomic,retain) EventDispatcher* eventDispatcher;

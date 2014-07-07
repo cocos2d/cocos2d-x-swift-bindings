@@ -84,7 +84,7 @@ namespace {
 - (void) dealloc
 {
     [_children release];
-    [self unscheduleUpdate];
+    self.inner = nil;
     [super dealloc];
 }
 
@@ -236,7 +236,16 @@ namespace {
 - (void) removeAllChildren
 {
     INNER(n, Node);
+    NSMutableArray* outers = [[NSMutableArray alloc] initWithCapacity:n->getChildren().size()];
+    for (auto node : n->getChildren())
+        [outers addObject:GET_OUTER(node, Node)];
+
     n->removeAllChildren();
+    
+    for (id outer in outers)
+        [outer release];
+    
+    [outers release];
 }
 
 - (CGSize) getContentSize
@@ -257,16 +266,20 @@ namespace {
     _update = update;
     [_update retain];
     INNER(n,Node);
-    auto uc = updateComponent::create(self);
-    uc->setName("updateComponent");
-    n->addComponent(uc);
+    if (!n->getComponent("updateComponent"))
+    {
+        auto uc = updateComponent::create(self);
+        uc->setName("updateComponent");
+        n->addComponent(uc);
+    }
     n->scheduleUpdate();
 }
 
 - (void) unscheduleUpdate
 {
     INNER(n,Node);
-    n->removeComponent("updateComponent");
+    // cannot remove this safely, rely on Node to remove
+    //n->removeComponent("updateComponent");
     n->unscheduleUpdate();
     [_update release];
     _update = nil;
