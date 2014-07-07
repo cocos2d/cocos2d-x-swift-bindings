@@ -69,6 +69,7 @@ typedef void(^tUpdateBlock)(float);
 - (void) addChild :(Node*)child;
 - (NSArray*) getChildren;
 - (Node*) getParent;
+- (void) removeAllChildren;
 
 - (CGSize) getContentSize;
 - (void) setContentSize :(CGSize)size;

@@ -81,17 +81,18 @@ namespace {
     return self;
 }
 
+- (void) dealloc
+{
+    [_children release];
+    [self unscheduleUpdate];
+    [super dealloc];
+}
+
 - (void) initCommon
 {
     INNER(n,Node);
     n->setOnEnterCallback([self] () { [self onEnter]; });
     n->setOnExitCallback([self] () { [self onExit]; });
-}
-
-- (void) dealloc
-{
-    [_children release];
-    [super dealloc];
 }
 
 - (void) setAnchorPoint :(CGPoint)anchor
@@ -230,6 +231,12 @@ namespace {
     INNER(n, Node);
     auto parent = n->getParent();
     return parent != nullptr ? static_cast<Node*>(parent->_scriptObject) : nullptr;
+}
+
+- (void) removeAllChildren
+{
+    INNER(n, Node);
+    n->removeAllChildren();
 }
 
 - (CGSize) getContentSize
