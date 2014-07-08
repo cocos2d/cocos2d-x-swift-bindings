@@ -67,6 +67,7 @@ typedef void(^tUpdateBlock)(float);
 - (void)  setScale :(float)scaleX :(float)scaleY;
 
 - (void) addChild :(Node*)child;
+- (void) removeChild :(Node*)child;
 - (NSArray*) getChildren;
 - (Node*) getParent;
 - (void) removeAllChildren;

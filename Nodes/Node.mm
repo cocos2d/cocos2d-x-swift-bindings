@@ -208,8 +208,15 @@ namespace {
 - (void) addChild:(Node*) child
 {
     INNER(n,Node);
-    [child retain];
+    [self retain];
     n->addChild(static_cast<cocos2d::Node*>(child.inner));
+}
+
+- (void) removeChild :(Node*)child
+{
+    INNER(n,Node);
+    n->removeChild(static_cast<cocos2d::Node*>(child.inner));
+    [self release];
 }
 
 - (NSArray*) getChildren
