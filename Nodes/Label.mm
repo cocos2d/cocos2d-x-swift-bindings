@@ -64,4 +64,31 @@
     l->setString([text UTF8String]);
 }
 
+- (void) enableShadow :(Color4B*)color :(CGSize)offset :(int)blurRadius
+{
+    INNER(l,Label);
+    cocos2d::Color4B c(color.r, color.g, color.b, color.a);
+    l->enableShadow(c, cocos2d::Size(offset.width, offset.height), blurRadius);
+}
+
+- (void) enableOutline :(Color4B*)outlineColor :(int)outlineSize
+{
+    INNER(l,Label);
+    cocos2d::Color4B c(outlineColor.r, outlineColor.g, outlineColor.b, outlineColor.a);
+    l->enableOutline(c, outlineSize);
+}
+
+- (void) enableGlow :(Color4B*)glowColor
+{
+    INNER(l,Label);
+    cocos2d::Color4B c(glowColor.r, glowColor.g, glowColor.b, glowColor.a);
+    l->enableGlow(c);
+}
+
+- (void) disableEffect
+{
+    INNER(l,Label);
+    l->disableEffect();
+}
+
 @end

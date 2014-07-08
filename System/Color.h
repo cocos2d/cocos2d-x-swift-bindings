@@ -23,58 +23,16 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//  Ref.mm
-//  Created by Justin Graham on 6/17/14.
+//  Color.h
+//  Created by Justin Graham on 7/7/14.
 
 #import "Ref.h"
-#include "CCRef.h"
-#include "CCNode.h"
 
-@implementation Ref
-- (void) dealloc
-{
-    if (_inner)
-    {
-        auto n = static_cast<cocos2d::Ref*>(_inner);
-        n->release();
-    }
-    [super dealloc];
-}
-
-- (id) retain
-{
-    auto ref = (cocos2d::Ref*)_inner;
-    if (ref)
-        ref->retain();
-    return [super retain];
-}
-
-- (void) release
-{
-    auto ref = (cocos2d::Ref*)_inner;
-    if (ref)
-        ref->release();
-    [super release];
-}
-
-- (void*) inner
-{
-    return _inner;
-}
-
-- (void) setInner:(void*)inner
-{
-    if (_inner)
-    {
-        [self retain];
-        _inner = nil;
-    }
-    if (inner)
-    {
-        _inner = inner;
-        [self retain];
-        auto n = static_cast<cocos2d::Ref*>(inner);
-        n->_scriptObject = self;
-    }
-}
+@interface Color4B : Ref
+@property (nonatomic,assign) unsigned char r;
+@property (nonatomic,assign) unsigned char g;
+@property (nonatomic,assign) unsigned char b;
+@property (nonatomic,assign) unsigned char a;
++ (id) createWithRGBA :(unsigned char)red :(unsigned char)green :(unsigned char)blue :(unsigned char)alpha;
++ (id) createWithBlack;
 @end

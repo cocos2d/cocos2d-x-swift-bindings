@@ -6,6 +6,8 @@
 #import "Action.h"
 #import "ActionInterval.h"
 #import "ActionSequence.h"
+#import "AudioEngine.h"
+#import "Color.h"
 #import "Console.h"
 #import "Director.h"
 #import "Event.h"

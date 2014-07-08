@@ -27,10 +27,15 @@
 //  Created by Justin Graham on 6/25/14.
 
 #import "Node.h"
+#import "Color.h"
 
 @interface Label : Node
 + (Label*) create;
 + (Label*) createWithSystemFont :(NSString*)text :(NSString*)font :(float)fontSize;
 + (Label*) createWithTTF :(NSString*)text :(NSString*)fontFile :(float)fontSize;
 - (void) setString :(NSString*)text;
+- (void) enableShadow :(Color4B*)color :(CGSize)offset :(int)blurRadius;
+- (void) enableOutline :(Color4B*)outlineColor :(int)outlineSize;
+- (void) enableGlow :(Color4B*)glowColor;
+- (void) disableEffect;
 @end
