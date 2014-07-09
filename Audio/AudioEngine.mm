@@ -81,10 +81,10 @@
     ae->setEffectsVolume(volume);
 }
 
-- (uint32_t) playEffect :(NSString*)path :(bool)loop :(float)pan :(float)gain
+- (uint32_t) playEffect :(NSString*)path :(bool)loop :(float)pitch :(float)pan :(float)gain
 {
     INNERNS(ae,CocosDenshion::SimpleAudioEngine);
-    return ae->playEffect([path UTF8String], loop, pan, gain);
+    return ae->playEffect([path UTF8String], loop, pitch, pan, gain);
 }
 
 - (void) pauseEffect :(uint32_t)id
