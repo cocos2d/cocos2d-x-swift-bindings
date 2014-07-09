@@ -34,6 +34,7 @@
 + (Label*) createWithSystemFont :(NSString*)text :(NSString*)font :(float)fontSize;
 + (Label*) createWithTTF :(NSString*)text :(NSString*)fontFile :(float)fontSize;
 - (void) setString :(NSString*)text;
+- (void) setTextColor :(Color4B*)color;
 - (void) enableShadow :(Color4B*)color :(CGSize)offset :(int)blurRadius;
 - (void) enableOutline :(Color4B*)outlineColor :(int)outlineSize;
 - (void) enableGlow :(Color4B*)glowColor;

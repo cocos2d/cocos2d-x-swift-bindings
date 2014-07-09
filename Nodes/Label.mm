@@ -64,6 +64,13 @@
     l->setString([text UTF8String]);
 }
 
+- (void) setTextColor :(Color4B*)color
+{
+    INNER(l,Label);
+    cocos2d::Color4B c(color.r, color.g, color.b, color.a);
+    l->setTextColor(c);
+}
+
 - (void) enableShadow :(Color4B*)color :(CGSize)offset :(int)blurRadius
 {
     INNER(l,Label);
