@@ -23,7 +23,7 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//  ActionSequence.m
+//  Sequence.m
 //  Created by Justin Graham on 6/29/14.
 
 #import "ActionSequence.h"
@@ -31,8 +31,8 @@
 #include "CCAction.h"
 #include "CCActionInterval.h"
 
-@implementation ActionSequence
-+ (ActionSequence*) create :(NSArray*)actions
+@implementation Sequence
++ (Sequence*) create :(NSArray*)actions
 {
     cocos2d::Vector<cocos2d::FiniteTimeAction*> arrayOfActions;
     for (Action* action in actions)
@@ -40,8 +40,15 @@
         [action retain]; // match inner retain below
         arrayOfActions.pushBack(static_cast<cocos2d::FiniteTimeAction*>(action.inner));
     }
-    ActionSequence* sequence = [ActionSequence new];
+    Sequence* sequence = [Sequence new];
     sequence.inner = cocos2d::Sequence::create(arrayOfActions);
+    return sequence;
+}
+
++ (Sequence*) createWithTwoActions :(FiniteTimeAction*)action1 :(FiniteTimeAction*)action2
+{
+    Sequence* sequence = [Sequence new];
+    sequence.inner = cocos2d::Sequence::createWithTwoActions(static_cast<cocos2d::FiniteTimeAction*>(action1.inner), static_cast<cocos2d::FiniteTimeAction*>(action2.inner));
     return sequence;
 }
 @end

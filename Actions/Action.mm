@@ -52,7 +52,6 @@
     INNER(a,Action);
     return a->isDone();
 }
-
 @end
 
 @implementation FiniteTimeAction

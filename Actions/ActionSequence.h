@@ -28,6 +28,7 @@
 
 #import "ActionInterval.h"
 
-@interface ActionSequence : ActionInterval
-+ (ActionSequence*) create :(NSArray*)actions;
+@interface Sequence : ActionInterval
++ (Sequence*) create :(NSArray*)actions;
++ (Sequence*) createWithTwoActions :(FiniteTimeAction*)action1 :(FiniteTimeAction*)action2;
 @end

@@ -39,3 +39,9 @@ typedef void(^closureActionBlock)(float time);
 @property (nonatomic,copy) closureActionBlock delegate;
 + (ClosureAction*) createWithDuration :(float)duration :(closureActionBlock)delegate;
 @end
+
+@interface Spawn : ActionInterval
++ (Spawn*) create :(NSArray*)actions;
++ (Spawn*) createWithTwoActions :(FiniteTimeAction*)action1 :(FiniteTimeAction*)action2;
+@end
+

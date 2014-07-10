@@ -79,3 +79,27 @@ namespace
         self.delegate(t);
 }
 @end
+
+
+@implementation Spawn
++ (Spawn*) create :(NSArray*)actions
+{
+    auto a = [Spawn new];
+    cocos2d::Vector<cocos2d::FiniteTimeAction*> arrayOfActions;
+    for (Action* action in actions)
+    {
+        [action retain]; // match inner retain below
+        arrayOfActions.pushBack(static_cast<cocos2d::FiniteTimeAction*>(action.inner));
+    }
+    a.inner = cocos2d::Spawn::create(arrayOfActions);
+    return a;
+}
+
++ (Spawn*) createWithTwoActions :(FiniteTimeAction*)action1 :(FiniteTimeAction*)action2
+{
+    auto a = [Spawn new];
+    a.inner = cocos2d::Spawn::createWithTwoActions(static_cast<cocos2d::FiniteTimeAction*>(action1.inner), static_cast<cocos2d::FiniteTimeAction*>(action2.inner));
+    return a;
+}
+@end
+
