@@ -23,7 +23,7 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//  Transitions.m
+//  Transitions.mm
 //  Created by Justin Graham on 6/27/14.
 
 #import "Transitions.h"

@@ -4,6 +4,7 @@
 
 #import "Acceleration.h"
 #import "Action.h"
+#import "ActionEase.h"
 #import "ActionInterval.h"
 #import "ActionSequence.h"
 #import "AudioEngine.h"

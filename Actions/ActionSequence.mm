@@ -23,7 +23,7 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//  Sequence.m
+//  Sequence.mm
 //  Created by Justin Graham on 6/29/14.
 
 #import "ActionSequence.h"

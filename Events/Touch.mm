@@ -23,7 +23,7 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//  Touch.m
+//  Touch.mm
 //  Created by Justin Graham on 6/21/14.
 
 #import "Touch.h"

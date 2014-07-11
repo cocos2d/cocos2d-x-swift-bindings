@@ -23,7 +23,7 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//  Layer.m
+//  Layer.mm
 //  Created by Justin Graham on 6/28/14.
 
 #import "Layer.h"

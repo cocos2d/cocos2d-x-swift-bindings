@@ -45,3 +45,91 @@ typedef void(^closureActionBlock)(float time);
 + (Spawn*) createWithTwoActions :(FiniteTimeAction*)action1 :(FiniteTimeAction*)action2;
 @end
 
+@interface Repeat : ActionInterval
++ (Repeat*) create :(FiniteTimeAction*)action :(unsigned int)times;
+@end
+
+@interface RepeatForever : ActionInterval
++ (RepeatForever*) create :(ActionInterval*)action;
+@end
+
+@interface RotateTo : ActionInterval
++ (RotateTo*) create :(float)duration :(float)deltaAngleX :(float)deltaAngleY;
++ (RotateTo*) create :(float)duration :(float)deltaAngle;
+@end
+
+
+@interface RotateBy : ActionInterval
++ (RotateBy*) create :(float)duration :(float) deltaAngle;
++ (RotateBy*) create :(float)duration :(float) deltaAngleZ_X :(float)deltaAngleZ_Y;
+@end
+
+@interface MoveBy : ActionInterval
++ (MoveBy*) create :(float)duration :(CGPoint)deltaPosition;
+@end
+
+@interface MoveTo : MoveBy
++ (MoveTo*) create :(float)duration :(CGPoint)position;
+@end
+
+@interface SkewTo : ActionInterval
++ (SkewTo*) create :(float)t :(float)sx :(float)sy;
+@end
+
+@interface SkewBy : SkewTo
++ (SkewBy*) create :(float)t :(float)deltaSkewX :(float)deltaSkewY;
+@end
+
+
+@interface JumpBy : ActionInterval
++ (JumpBy*) create :(float)duration :(CGPoint)position :(float)height :(int)jumps;
+@end
+
+@interface JumpTo : JumpBy
++ (JumpTo*) create :(float)duration :(CGPoint)position :(float)height :(int)jumps;
+@end
+
+@interface ScaleTo : ActionInterval
++ (ScaleTo*) create :(float)duration :(float)s;
++ (ScaleTo*) create :(float)duration :(float)sx :(float)sy;
++ (ScaleTo*) create :(float)duration :(float)sx :(float)sy :(float)sz;
+@end
+
+@interface ScaleBy : ScaleTo
++ (ScaleBy*) create :(float)duration :(float)s;
++ (ScaleBy*) create :(float)duration :(float)sx :(float)sy;
++ (ScaleBy*) create :(float)duration :(float)sx :(float)sy :(float)sz;
+@end
+   
+@interface Blink : ActionInterval
++ (Blink*) create :(float)duration :(int)blinks;
+@end
+
+@interface FadeTo : ActionInterval
++ (FadeTo*) create :(float)duration :(unsigned)opacity;
+@end
+
+@interface FadeIn : FadeTo
++ (FadeIn*) create :(float)d;
+@end
+   
+@interface FadeOut : FadeTo
++ (FadeOut*) create :(float)d;
+@end
+   
+@interface TintTo : ActionInterval
++ (TintTo*) create :(float)duration :(unsigned)red :(unsigned)green :(unsigned)blue;
+@end
+   
+@interface TintBy : ActionInterval
++ (TintBy*) create :(float)duration :(unsigned)deltaRed :(unsigned)deltaGreen :(unsigned)deltaBlue;
+@end
+   
+@interface DelayTime : ActionInterval
++ (DelayTime*) create :(float)d;
+@end
+
+@interface ReverseTime : ActionInterval
++ (ReverseTime*) create :(FiniteTimeAction*)action;
+@end
+
