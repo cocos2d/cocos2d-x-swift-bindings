@@ -31,6 +31,7 @@
 
 namespace
 {
+    // purpose of this wrapper class is to gain access to update
     class _wrap_ActionInterval : public cocos2d::ActionInterval
     {
     public:
@@ -63,7 +64,6 @@ namespace
 }
 @end
 
-
 @implementation ClosureAction
 + (ClosureAction*) createWithDuration :(float)duration :(closureActionBlock)delegate
 {
@@ -79,7 +79,6 @@ namespace
         self.delegate(t);
 }
 @end
-
 
 @implementation Spawn
 + (Spawn*) create :(NSArray*)actions
@@ -102,9 +101,6 @@ namespace
     return a;
 }
 @end
-
-
-
 
 @implementation Repeat
 + (Repeat*) create :(FiniteTimeAction*)action :(unsigned int)times
@@ -138,7 +134,6 @@ namespace
     return a;
 }
 @end
-
 
 @implementation RotateBy
 + (RotateBy*) create :(float)duration :(float) deltaAngle;
@@ -190,7 +185,6 @@ namespace
     return a;
 }
 @end
-
 
 @implementation JumpBy
 + (JumpBy*) create :(float)duration :(CGPoint)position :(float)height :(int)jumps;

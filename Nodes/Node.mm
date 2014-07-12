@@ -93,6 +93,8 @@ namespace {
     INNER(n,Node);
     n->setOnEnterCallback([self] () { [self onEnter]; });
     n->setOnExitCallback([self] () { [self onExit]; });
+    n->setonEnterTransitionDidFinishCallback([self] () { [self onEnterTransitionDidFinish]; });
+    n->setonExitTransitionDidStartCallback([self] () { [self onExitTransitionDidFinish]; });
 }
 
 - (void) setAnchorPoint :(CGPoint)anchor
@@ -149,6 +151,19 @@ namespace {
     INNER(n,Node);
     const cocos2d::Vec2& pos = n->getPosition();
     return CGPointMake(pos.x, pos.y);
+}
+
+- (void) setNormalizedPosition :(CGPoint)position
+{
+    INNER(n,Node);
+    n->setNormalizedPosition(cocos2d::Vec2(position.x, position.y));
+}
+
+- (CGPoint) getNormalizedPosition
+{
+    INNER(n,Node);
+    auto position = n->getNormalizedPosition();
+    return CGPointMake(position.x, position.y);
 }
 
 - (void) setScaleX :(float)scaleX
@@ -332,6 +347,16 @@ namespace {
 }
 
 - (void) onExit
+{
+    // does nothing
+}
+
+- (void) onEnterTransitionDidFinish
+{
+    // does nothing
+}
+
+- (void) onExitTransitionDidFinish
 {
     // does nothing
 }

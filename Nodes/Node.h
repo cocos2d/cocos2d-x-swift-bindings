@@ -50,6 +50,9 @@ typedef void(^tUpdateBlock)(float);
 - (void) setPosition :(float)x :(float)y;
 - (CGPoint) getPosition;
 
+- (void) setNormalizedPosition :(CGPoint)position;
+- (CGPoint) getNormalizedPosition;
+
 - (float) getRotation;
 - (void) setRotation :(float)r;
 
@@ -87,6 +90,8 @@ typedef void(^tUpdateBlock)(float);
 
 - (void) onEnter;
 - (void) onExit;
+- (void) onEnterTransitionDidFinish;
+- (void) onEXitTransitionDidFinish;
 
 - (void) removeFromParentAndCleanup :(bool)cleanup;
 
