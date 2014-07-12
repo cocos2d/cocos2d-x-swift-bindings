@@ -18,6 +18,7 @@
 #import "EventListenerKeyboard.h"
 #import "EventListenerTouch.h"
 #import "Label.h"
+#import "Layer.h"
 #import "Node.h"
 #import "Ref.h"
 #import "Scene.h"

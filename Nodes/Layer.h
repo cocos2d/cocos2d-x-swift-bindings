@@ -27,6 +27,16 @@
 //  Created by Justin Graham on 6/28/14.
 
 #import "Node.h"
+#import "Color.h"
 
 @interface Layer : Node
+@end
+
+@interface LayerColor : Layer
++ (LayerColor*) create;
++ (LayerColor*) create :(Color4B*)color :(float)width :(float)height;
++ (LayerColor*) create :(Color4B*)color;
+- (void) changeWidth :(float)w;
+- (void) changeHeight :(float)h;
+- (void) changeWidthAndHeight :(float)w :(float)h;
 @end

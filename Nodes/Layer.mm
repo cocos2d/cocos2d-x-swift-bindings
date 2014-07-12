@@ -27,6 +27,58 @@
 //  Created by Justin Graham on 6/28/14.
 
 #import "Layer.h"
+#include "CCLayer.h"
 
 @implementation Layer
+@end
+
+@implementation LayerColor
++ (LayerColor*) create
+{
+    auto l = [LayerColor new];
+    l.inner = cocos2d::LayerColor::create();
+    return l;
+}
+
++ (LayerColor*) create :(Color4B*)color :(float)width :(float)height
+{
+    auto l = [LayerColor new];
+    cocos2d::Color4B c;
+    c.r = color.r;
+    c.g = color.g;
+    c.b = color.b;
+    c.a = color.a;
+    l.inner = cocos2d::LayerColor::create(c, width, height);
+    return l;
+}
+
++ (LayerColor*) create :(Color4B*)color
+{
+    auto l = [LayerColor new];
+    cocos2d::Color4B c;
+    c.r = color.r;
+    c.g = color.g;
+    c.b = color.b;
+    c.a = color.a;
+    l.inner = cocos2d::LayerColor::create(c);
+    return l;
+}
+
+- (void) changeWidth :(float)w
+{
+    INNER(l,LayerColor);
+    l->changeWidth(w);
+}
+
+- (void) changeHeight :(float)h
+{
+    INNER(l,LayerColor);
+    l->changeHeight(h);
+}
+
+- (void) changeWidthAndHeight :(float)w :(float)h
+{
+    INNER(l,LayerColor);
+    l->changeWidthAndHeight(w, h);
+}
 @end
