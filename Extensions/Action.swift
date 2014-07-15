@@ -26,8 +26,6 @@ THE SOFTWARE.
 //  Action.swift
 //  Created by Justin Graham on 7/10/14.
 
-import Foundation
-
 @infix func + (left: FiniteTimeAction, right: FiniteTimeAction) -> ActionInterval
 {
     return Sequence.createWithTwoActions(left, right)
