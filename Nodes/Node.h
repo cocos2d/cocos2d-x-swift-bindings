@@ -91,7 +91,7 @@ typedef void(^tUpdateBlock)(float);
 - (void) onEnter;
 - (void) onExit;
 - (void) onEnterTransitionDidFinish;
-- (void) onEXitTransitionDidFinish;
+- (void) onExitTransitionDidFinish;
 
 - (void) removeFromParentAndCleanup :(bool)cleanup;
 

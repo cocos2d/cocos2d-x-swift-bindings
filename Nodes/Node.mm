@@ -236,15 +236,17 @@ namespace {
 
 - (NSArray*) getChildren
 {
-    if (_children == nil)
-        _children = [[NSMutableArray alloc] init];
+    if (nil == _children)
+        _children = [NSMutableArray new];
     
     [_children removeAllObjects];
     
     auto n = (cocos2d::Node*)_inner;
     for (auto node : n->getChildren())
+    {
+        SET_OUTER(node, Node)
         [_children addObject:static_cast<Node*>(node->_scriptObject)];
-    
+    }
     return _children;
 }
 

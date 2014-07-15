@@ -66,7 +66,7 @@
 {
     if (_inner)
     {
-        [self retain];
+        [self release];
         _inner = nil;
     }
     if (inner)
