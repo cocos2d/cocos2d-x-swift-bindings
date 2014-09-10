@@ -28,12 +28,12 @@ THE SOFTWARE.
 
 import Foundation
 
-@infix func + (left: FiniteTimeAction, right: FiniteTimeAction) -> ActionInterval
+func + (left: FiniteTimeAction, right: FiniteTimeAction) -> ActionInterval
 {
     return Sequence.createWithTwoActions(left, right)
 }
 
-@infix func | (left: FiniteTimeAction, right: FiniteTimeAction) -> ActionInterval
+func | (left: FiniteTimeAction, right: FiniteTimeAction) -> ActionInterval
 {
     return Spawn.createWithTwoActions(left, right)
 }
