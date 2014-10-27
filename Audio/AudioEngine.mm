@@ -30,128 +30,117 @@
 #include "SimpleAudioEngine.h"
 
 @implementation AudioEngine
-+ (AudioEngine*) getInstance
++ (void) preloadBackgroundMusic :(NSString*)path
 {
-    static AudioEngine* instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[self alloc] init];
-        instance.inner = CocosDenshion::SimpleAudioEngine::getInstance();
-    });
-    return instance;
-}
-
-- (void) preloadBackgroundMusic :(NSString*)path
-{
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->preloadBackgroundMusic([path UTF8String]);
 }
 
-- (void) playBackgroundMusic :(NSString*)path :(bool)loop
++ (void) playBackgroundMusic :(NSString*)path :(bool)loop
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->playBackgroundMusic([path UTF8String], loop);
 }
 
-- (void) stopBackgroundMusic
++ (void) stopBackgroundMusic
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->stopBackgroundMusic();
 }
 
-- (void) pauseBackgroundMusic
++ (void) pauseBackgroundMusic
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->pauseBackgroundMusic();
 }
 
-- (void) resumeBackgroundMusic
++ (void) resumeBackgroundMusic
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->resumeBackgroundMusic();
 }
 
-- (void) rewindBackgroundMusic
++ (void) rewindBackgroundMusic
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->rewindBackgroundMusic();
 }
 
-- (bool) isBackgroundMusicPlaying
++ (bool) isBackgroundMusicPlaying
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     return ae->isBackgroundMusicPlaying();
 }
 
-- (void) setBackgroundMusicVolume :(float)volume
++ (void) setBackgroundMusicVolume :(float)volume
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->setBackgroundMusicVolume(volume);
 }
 
-- (float) getEffectsVolume
++ (float) getEffectsVolume
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     return ae->getEffectsVolume();
 }
 
-- (void) setEffectsVolume :(float)volume
++ (void) setEffectsVolume :(float)volume
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->setEffectsVolume(volume);
 }
 
-- (uint32_t) playEffect :(NSString*)path :(bool)loop :(float)pitch :(float)pan :(float)gain
++ (uint32_t) playEffect :(NSString*)path :(bool)loop :(float)pitch :(float)pan :(float)gain
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     return ae->playEffect([path UTF8String], loop, pitch, pan, gain);
 }
 
-- (void) pauseEffect :(uint32_t)id
++ (void) pauseEffect :(uint32_t)id
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->pauseEffect(id);
 }
 
-- (void) pauseAllEffects
++ (void) pauseAllEffects
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->pauseAllEffects();
 }
 
-- (void) resumeEffect :(uint32_t)id
++ (void) resumeEffect :(uint32_t)id
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->resumeEffect(id);
 }
 
-- (void) resumeAllEffects
++ (void) resumeAllEffects
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->resumeAllEffects();
 }
 
-- (void) stopEffect :(uint32_t)id
++ (void) stopEffect :(uint32_t)id
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->stopEffect(id);
 }
 
-- (void) stopAllEffects
++ (void) stopAllEffects
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->stopAllEffects();
 }
 
-- (void) preloadEffect :(NSString*)path
++ (void) preloadEffect :(NSString*)path
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->preloadEffect([path UTF8String]);
 }
 
-- (void) unloadEffect :(NSString*)path
++ (void) unloadEffect :(NSString*)path
 {
-    INNERNS(ae,CocosDenshion::SimpleAudioEngine);
+    auto ae = CocosDenshion::SimpleAudioEngine::getInstance();
     ae->unloadEffect([path UTF8String]);
 }
 @end

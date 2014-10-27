@@ -26,28 +26,26 @@
 //  AudioEngine.h
 //  Created by Justin Graham on 7/3/14.
 
-#import "Ref.h"
 #include "stdint.h"
 
-@interface AudioEngine : Ref
-+ (AudioEngine*) getInstance;
-- (void) preloadBackgroundMusic :(NSString*)path;
-- (void) playBackgroundMusic :(NSString*)path :(bool)loop;
-- (void) stopBackgroundMusic;
-- (void) pauseBackgroundMusic;
-- (void) resumeBackgroundMusic;
-- (void) rewindBackgroundMusic;
-- (bool) isBackgroundMusicPlaying;
-- (void) setBackgroundMusicVolume :(float)volume;
-- (float) getEffectsVolume;
-- (void) setEffectsVolume :(float)volume;
-- (uint32_t) playEffect :(NSString*)path :(bool)loop :(float)pitch :(float)pan :(float)gain;
-- (void) pauseEffect :(uint32_t)id;
-- (void) pauseAllEffects;
-- (void) resumeEffect :(uint32_t)id;
-- (void) resumeAllEffects;
-- (void) stopEffect :(uint32_t)id;
-- (void) stopAllEffects;
-- (void) preloadEffect :(NSString*)path;
-- (void) unloadEffect :(NSString*)path;
+@interface AudioEngine : NSObject
++ (void) preloadBackgroundMusic :(NSString*)path;
++ (void) playBackgroundMusic :(NSString*)path :(bool)loop;
++ (void) stopBackgroundMusic;
++ (void) pauseBackgroundMusic;
++ (void) resumeBackgroundMusic;
++ (void) rewindBackgroundMusic;
++ (bool) isBackgroundMusicPlaying;
++ (void) setBackgroundMusicVolume :(float)volume;
++ (float) getEffectsVolume;
++ (void) setEffectsVolume :(float)volume;
++ (uint32_t) playEffect :(NSString*)path :(bool)loop :(float)pitch :(float)pan :(float)gain;
++ (void) pauseEffect :(uint32_t)id;
++ (void) pauseAllEffects;
++ (void) resumeEffect :(uint32_t)id;
++ (void) resumeAllEffects;
++ (void) stopEffect :(uint32_t)id;
++ (void) stopAllEffects;
++ (void) preloadEffect :(NSString*)path;
++ (void) unloadEffect :(NSString*)path;
 @end

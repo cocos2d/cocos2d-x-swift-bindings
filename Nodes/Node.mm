@@ -262,7 +262,11 @@ namespace {
     INNER(n, Node);
     NSMutableArray* outers = [[NSMutableArray alloc] initWithCapacity:n->getChildren().size()];
     for (auto node : n->getChildren())
-        [outers addObject:GET_OUTER(node, Node)];
+    {
+        auto nn = GET_OUTER(node, Node);
+        if (nn)
+            [outers addObject:nn];
+    }
 
     n->removeAllChildren();
     

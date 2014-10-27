@@ -31,7 +31,7 @@
 @class Event;
 
 @interface EventListenerKeyboard : EventListener
-typedef NS_ENUM(NSInteger, KeyCode)
+typedef NS_ENUM(int, KeyCode)
 {
     KeyCodeNONE,
     KeyCodePAUSE,
